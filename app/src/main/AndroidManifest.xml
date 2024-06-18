@@ -13,7 +13,10 @@
         android:theme="@style/Theme.CourseApp"
         tools:targetApi="31">
         <activity
-            android:name=".IntroActivity"
+            android:name=".activity.CourseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +25,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:name=".activity.MainActivity"
+            android:exported="false"></activity>
     </application>
 
 </manifest>

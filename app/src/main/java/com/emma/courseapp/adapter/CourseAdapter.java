@@ -1,12 +1,27 @@
 package com.emma.courseapp.adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class courseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
+import com.emma.courseapp.databinding.ViewholderListBinding;
+import com.emma.courseapp.model.Course;
+
+import java.util.List;
+
+public class CourseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
+    private final List<Course> courses;
+    Context context;
+
+    public CourseAdapter(List<Course> courses) {
+        this.courses = courses;
+    }
+
     /**
      * Called when RecyclerView needs a new {@link ViewHolder} of the given type to represent
      * an item.
@@ -30,7 +45,9 @@ public class courseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
     @NonNull
     @Override
     public CourseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        ViewholderListBinding binding = ViewholderListBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        context = parent.getContext();
+        return new CourseViewHolder(binding);
     }
 
     /**
@@ -55,6 +72,8 @@ public class courseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
      */
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
+        Course course = courses.get(position);
+        holder.setBinding(course);
 
     }
 
