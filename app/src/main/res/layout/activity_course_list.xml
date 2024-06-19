@@ -60,7 +60,6 @@
         android:clipToPadding="false"
         android:padding="8dp"
         android:scrollbars="vertical"
-        android:visibility="visible"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

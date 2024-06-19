@@ -7,6 +7,8 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
+import com.emma.courseapp.databinding.ActivityIntroBinding;
+
 public class IntroActivity extends AppCompatActivity {
 
     ActivityIntroBinding binding;
