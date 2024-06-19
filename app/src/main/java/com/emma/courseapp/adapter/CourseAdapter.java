@@ -74,7 +74,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         Course course = courses.get(position);
         holder.setBinding(course);
-
     }
 
     /**

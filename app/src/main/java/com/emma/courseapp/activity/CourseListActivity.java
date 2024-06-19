@@ -9,11 +9,12 @@ import com.emma.courseapp.databinding.ActivityCourseListBinding;
 import com.emma.courseapp.model.Course;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CourseListActivity extends AppCompatActivity {
 
-    private final List<Course> courses = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
     private ActivityCourseListBinding binding;
     private CourseAdapter courseAdapter;
 
@@ -22,12 +23,24 @@ public class CourseListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityCourseListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        init();
         initRecyclerView();
+    }
+
+    public void init() {
+        courses = Arrays.asList(
+                new Course("Advance certificate program for AI", 24, "btn_1"),
+                new Course("Google cloud platform architecture", 69, "btn_2"),
+                new Course("Fundamentals of Java programming", 100, "btn_3"),
+                new Course("Introduction to UI design history", 46, "btn_4"),
+                new Course("Advance certificate program for AI", 24, "btn_1")
+        );
+        binding.backImg.setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
     }
 
     private void initRecyclerView() {
         courseAdapter = new CourseAdapter(courses);
-        binding.backImg.setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
+        binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setAdapter(courseAdapter);
     }
 }

@@ -5,6 +5,12 @@ public class Course {
     private double price;
     private String picPath;
 
+    public Course(String title, double price, String picPath) {
+        this.title = title;
+        this.price = price;
+        this.picPath = picPath;
+    }
+
     public String getTitle() {
         return title;
     }
