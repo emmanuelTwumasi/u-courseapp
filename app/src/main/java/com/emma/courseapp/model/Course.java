@@ -1,11 +1,15 @@
 package com.emma.courseapp.model;
 
-public class Course {
-    private String title;
-    private double price;
-    private String picPath;
+import java.io.Serializable;
 
-    public Course(String title, double price, String picPath) {
+public class Course implements Serializable {
+    private String title;
+    private String price;
+    private String picPath;
+    public Course() {
+    }
+
+    public Course(String title, String price, String picPath) {
         this.title = title;
         this.price = price;
         this.picPath = picPath;
@@ -19,11 +23,11 @@ public class Course {
         this.title = title;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
