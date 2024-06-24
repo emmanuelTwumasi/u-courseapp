@@ -28,19 +28,31 @@ public class CourseListActivity extends AppCompatActivity {
 
     public void init() {
         List<Course> courses = new ArrayList<>();
-        courses.add(new Course("Advance certificate program for AI", "24", "btn_1"));
-        courses.add(new Course("Google cloud platform architecture", "69", "btn_2"));
-        courses.add(new Course("Fundamentals of Java programming", "100", "btn_3"));
-        courses.add(new Course("Introduction to UI design history", "46", "btn_4"));
-        courses.add(new Course("Advance certificate program for AI", "24", "btn_1"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_1"));
+        courses.add(new Course("Google cloud platform architecture", "69", "ic_2"));
+        courses.add(new Course("Fundamentals of Java programming", "100", "ic_3"));
+        courses.add(new Course("Introduction to UI design history", "46", "ic_4"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_5"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+        courses.add(new Course("Advance certificate program for AI", "24", "ic_"));
+
         initRecyclerView(courses);
     }
 
     private void initRecyclerView(List<Course> courses) {
-        binding.recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-        binding.recyclerView.setLayoutManager(layoutManager);
-        CourseAdapter courseAdapter = new CourseAdapter(courses);
-        binding.recyclerView.setAdapter(courseAdapter);
+        if (!courses.isEmpty()) {
+            binding.recyclerView.setHasFixedSize(true);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+            binding.recyclerView.setLayoutManager(layoutManager);
+            CourseAdapter courseAdapter = new CourseAdapter(courses);
+            binding.recyclerView.setAdapter(courseAdapter);
+            binding.progressBar.setVisibility(View.GONE);
+        }
     }
 }
