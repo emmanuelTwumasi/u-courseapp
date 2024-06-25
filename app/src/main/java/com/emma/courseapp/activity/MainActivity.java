@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
-//        binding.backImg.setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
         binding.txtPopularCourses.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), CourseListActivity.class);
             startActivity(intent);
